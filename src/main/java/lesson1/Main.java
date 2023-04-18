@@ -27,9 +27,12 @@ public class Main {
         for (int k : arr) {
             System.out.print(k + " ");
         }
+        System.out.print("\n");
+        task2();
     }
 
     private static int[] task1() {
+        System.out.println("task 1");
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Введите len:");
         int len = Integer.parseInt(myScanner.nextLine());
@@ -43,8 +46,19 @@ public class Main {
         for(int i = 0; i < len; i++){
             arr[i] = initialValue;
         }
-
         return arr;
     }
 
+    private static void task2() {
+        System.out.println("task 2");
+        int[] nums = new int[]{3, 2, 1, 5};
+        int max = nums[0];
+        int min = nums[0];
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] > max) max = nums[i];
+            if (nums[i] < min) min = nums[i];
+        }
+        System.out.print(max + " ");
+        System.out.print(min + " ");
+    }
 }
