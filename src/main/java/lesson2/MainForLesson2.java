@@ -69,7 +69,8 @@ public class MainForLesson2 {
 
             String[] key_values = raw_pair.split(":");
             if (!key_values[1].equals("null")) {
-                for (String key_value : key_values) {
+                String[] key_values_new = {key_values[0], "'" + key_values[1] + "'"};
+                for (String key_value : key_values_new) {
                     result.append(key_value);
                     result.append(" = ");
                 }
@@ -82,8 +83,9 @@ public class MainForLesson2 {
             result.delete(result.length() - 5, result.length());
         }
         else {
-            result.delete(result.length() - 6, result.length());
+            result.delete(result.length() - 7, result.length());
         }
+        result.append(";");
         System.out.printf("result = %s\n", result);
     }
 }
