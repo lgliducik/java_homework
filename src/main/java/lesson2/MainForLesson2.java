@@ -60,13 +60,10 @@ public class MainForLesson2 {
         String str_raw = json.substring(1, json.length() - 1);
         StringBuilder result = new StringBuilder();;
         result.append(str);
-
         String[] pairs = str_raw.split(",");
         int count = 0;
         for (String pair: pairs) {
-            int size = pair.length();
             String raw_pair = pair.replace("\"", "");
-
             String[] key_values = raw_pair.split(":");
             if (!key_values[1].equals("null")) {
                 String[] key_values_new = {key_values[0], "'" + key_values[1] + "'"};
