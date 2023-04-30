@@ -11,13 +11,14 @@ package lesson4;
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) {
-//        ex1();
-        ex2();
+        ex1();
+        List<Integer> res = ex2();
+        System.out.println("reverted list");
+        for (int i = 0; i < res.size(); i++)
+            System.out.println(res.get(i));
     }
     private static void ex1() {
-
         Scanner myScanner = new Scanner(System.in);
         System.out.println("В каком порядке отображать список:");
         String str = myScanner.nextLine();
@@ -49,15 +50,18 @@ public class Main {
         }
     }
 
-    private static void ex2() {
+    private static List<Integer> ex2() {
         List<Integer> mass = new LinkedList<>(Arrays.asList(1,2,3,4,5));
+
+        List<Integer> result = new LinkedList<>();
 
         System.out.println("input list");
         for (int i = 0; i < mass.size(); i++)
             System.out.println(mass.get(i));
 
-        System.out.println("reverted list");
-        for (int i = mass.size()-1; i >= 0; i--)
-            System.out.println(mass.get(i));
+        for (int i = mass.size()-1; i >= 0; i--) {
+            result.add(mass.get(i));
+        }
+        return result;
     }
 }
